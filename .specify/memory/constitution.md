@@ -1,22 +1,46 @@
 <!--
 Sync Impact Report
 ==================
-Version: 1.0.0 (Initial Constitution)
-Modified Principles: N/A (new constitution)
+Version: 1.0.0 → 2.0.0
+Change Type: MAJOR (Language requirement added - all specs, plans, and user-facing docs MUST be in Traditional Chinese)
+Modified Principles:
+  - All core principles remain the same (content unchanged)
+  - NEW: Language & Documentation Requirements section added as first principle
 Added Sections:
-  - Core Principles (I-V): Code Quality, Testing Standards, UX Consistency, Performance, Maintainability
-  - Quality Enforcement
-  - Development Workflow
-  - Governance
-Templates Updated:
-  ✅ Constitution created
-  ⚠ plan-template.md - pending alignment
-  ⚠ spec-template.md - pending alignment
-  ⚠ tasks-template.md - pending alignment
-Follow-up TODOs: Align dependent templates with new constitution principles
+  - Language & Documentation Requirements (mandating Traditional Chinese for specs/plans/docs)
+Removed Sections: None
+Templates Status:
+  ✅ .specify/memory/constitution.md - updated with language requirements
+  ⚠ .specify/templates/plan-template.md - needs alignment with new language requirement
+  ⚠ .specify/templates/spec-template.md - needs alignment with new language requirement
+  ⚠ .specify/templates/tasks-template.md - needs alignment with new language requirement
+  ⚠ .github/prompts/*.md - need to verify language requirement enforcement
+Follow-up TODOs:
+  - Update all template files to reflect Traditional Chinese requirement
+  - Ensure all command prompt files enforce zh-TW for generated specs/plans
+  - Update README.md to reflect Traditional Chinese documentation policy
+Version Bump Rationale:
+  This is a MAJOR version bump because it introduces a backward-incompatible governance change:
+  All existing and future specifications, plans, and user-facing documentation MUST be
+  written in Traditional Chinese (zh-TW). This fundamentally changes the documentation
+  governance of the project.
 -->
 
 # Money Manager Constitution
+
+## Language & Documentation Requirements
+
+**All specifications, plans, and user-facing documentation MUST be written in Traditional Chinese (zh-TW).**
+
+This includes but is not limited to:
+- Feature specification documents (spec.md)
+- Implementation plans (plan.md)
+- Task lists (tasks.md)
+- User guides and documentation
+- User-facing portions of API documentation
+- README and project introductions
+
+Code comments may be in Traditional Chinese or English, but Traditional Chinese is recommended for team readability.
 
 ## Core Principles
 
@@ -160,4 +184,4 @@ Follow-up TODOs: Align dependent templates with new constitution principles
 - Emergency hotfixes may bypass non-critical gates (documentation, performance testing)
 - Exceptions MUST be documented with rationale and followed up with compliance work
 
-**Version**: 1.0.0 | **Ratified**: 2025-11-14 | **Last Amended**: 2025-11-14
+**Version**: 2.0.0 | **Ratified**: 2025-11-14 | **Last Amended**: 2025-11-14
