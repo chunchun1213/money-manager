@@ -134,11 +134,11 @@
 
 ### 使用者故事 2 的實作
 
-- [ ] T052 [US2] 建立 lib/features/auth/domain/usecases/sign_out.dart 實作登出用例（清除 Supabase 會話、刪除本地 token、保留 lastAuthProvider）
+- [ ] T052 [US2] 建立 lib/features/auth/domain/usecases/sign_out.dart 實作登出用例（清除 Supabase Auth 會話、刪除本地 token、保留 lastAuthProvider）
 - [ ] T053 [US2] 在 lib/features/auth/presentation/providers/auth_state_provider.dart 加入 signOut 方法
 - [ ] T054 [US2] 建立 lib/features/auth/presentation/pages/home_page.dart 實作首頁（包含登出按鈕和 Header）
 - [ ] T055 [US2] 更新 lib/main.dart 路由邏輯支援登出後導向登入頁
-- [ ] T056 [US2] 實作登出後清除會話記錄（從 Supabase sessions 表格刪除當前裝置會話）
+- [ ] T056 [US2] 實作登出後清除會話記錄（從 Supabase Database sessions 表格刪除當前裝置的會話記錄）
 - [ ] T057 [US2] 執行所有使用者故事 2 的測試，確保通過
 
 **檢查點**: 此時，使用者故事 1 和 2 應該都能獨立運作
@@ -153,13 +153,13 @@
 
 ### 使用者故事 3 的測試 ✅
 
-- [ ] T058 [P] [US3] 建立 test/widget/auth/presentation/widgets/under_construction_widget_test.dart 測試施工中 Widget
+- [ ] T058 [P] [US3] 建立 test/widget/auth/presentation/widgets/under_construction_widget_test.dart 測試施工中元件
 - [ ] T059 [US3] 更新 test/widget/auth/presentation/pages/home_page_test.dart 驗證首頁包含施工中元件
 
 ### 使用者故事 3 的實作
 
-- [ ] T060 [US3] 建立 lib/features/auth/presentation/widgets/under_construction_widget.dart 實作施工中佔位元件（圖示 + 說明文字）
-- [ ] T061 [US3] 更新 lib/features/auth/presentation/pages/home_page.dart 加入施工中 Widget（使用 design_tokens.dart 的樣式）
+- [ ] T060 [US3] 建立 lib/features/auth/presentation/widgets/under_construction_widget.dart 實作施工中元件（圖示 + 說明文字）
+- [ ] T061 [US3] 更新 lib/features/auth/presentation/pages/home_page.dart 加入施工中元件（使用 design_tokens.dart 的樣式）
 - [ ] T062 [US3] 實作首頁 Header 元件（背景色 #86efcc，右上角登出按鈕）
 - [ ] T063 [US3] 執行所有使用者故事 3 的測試，確保通過
 
@@ -183,6 +183,9 @@
 - [ ] T073 執行 quickstart.md 中的驗證步驟確保環境設定正確
 - [ ] T074 程式碼重構和清理（移除未使用的 import、統一命名風格）
 - [ ] T075 安全性強化（確認 token 加密儲存、RLS 政策正確設定）
+- [ ] T076 [P] 建立 integration_test/performance/login_performance_test.dart 驗證登入流程時間 < 30 秒（SC-001）
+- [ ] T077 [P] 建立 integration_test/performance/auto_login_performance_test.dart 驗證自動登入時間 < 3 秒（SC-003）
+- [ ] T078 [P] 建立 test/widget/responsive_design_test.dart 驗證登入頁和首頁在各螢幕尺寸（手機、平板）正確顯示（SC-006）
 
 ---
 
@@ -289,14 +292,14 @@ Task T041: "建立 lib/features/auth/presentation/widgets/facebook_sign_in_butto
 
 ## 任務統計總結
 
-- **總任務數**: 75
+- **總任務數**: 78
 - **使用者故事 1 任務數**: 31（包含 8 個測試任務）
 - **使用者故事 2 任務數**: 9（包含 3 個測試任務）
 - **使用者故事 3 任務數**: 6（包含 2 個測試任務）
 - **設定任務數**: 10
 - **基礎建設任務數**: 7
-- **精緻化任務數**: 12
-- **可平行執行任務**: 約 40 個任務標記 [P]
+- **精緻化任務數**: 15（包含 3 個效能驗證測試任務）
+- **可平行執行任務**: 約 43 個任務標記 [P]
 
 ---
 
@@ -318,7 +321,7 @@ Task T041: "建立 lib/features/auth/presentation/widgets/facebook_sign_in_butto
 - 使用者故事 1 提供核心價值：社群帳號登入和自動登入
 - 可獨立測試和驗證
 - 為後續故事建立基礎
-- 約 48 個任務（包含設定和基礎建設）
+- 約 48 個任務（包含設定和基礎建設，不含 Phase 6 精緻化）
 - 預估完成時間：2-3 週（單人）或 1-1.5 週（2-3 人平行）
 
 **MVP 交付成果**:
